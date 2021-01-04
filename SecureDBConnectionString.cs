@@ -41,8 +41,8 @@ namespace SecureSQL
             }
             catch (Exception e)
             {
-                var Ip = HttpContext.Current.Request.HttpContext.Connection.RemoteIpAddress.ToString();
-                var Ip2 = IPAddress.Loopback.ToString();
+                var Ip = HttpContext.Current.Request.HttpContext.Connection.RemoteIpAddress.GetHashCode();
+                var Ip2 = IPAddress.Loopback.GetHashCode();
 
                 if (Ip == Ip2)
                 {
